@@ -1,8 +1,9 @@
-package Controllers;
+package Login_page;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -30,13 +31,15 @@ public class LoginPageController {
     @FXML
     void btnLoginOnAction(ActionEvent event) {
         if (loginController.check_UserName_And_Password(txtUserName.getText(),txtPassword.getText())){
-            Stage stage=new Stage();
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             try {
                 stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/Main_DashBoard.fxml"))));
+                stage.centerOnScreen();
+                stage.show();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            stage.show();
+
         }else {
             Alert alert=new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText("Login Failed");

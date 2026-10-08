@@ -3,18 +3,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Starter extends Application {
+
     public static void main(String[] args) {
-        launch();
-
-
+        launch(args);
     }
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/View/LoginPage.fxml"))));
-       stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/LoginPage.fxml"));
+        Scene scene = new Scene(loader.load());
+
+        stage.setTitle("Library Management System ");
+        stage.setScene(scene);
+
+
+        stage.setMinWidth(600);
+        stage.setMinHeight(450);
+
+        stage.centerOnScreen();
+        stage.show();
     }
 }
