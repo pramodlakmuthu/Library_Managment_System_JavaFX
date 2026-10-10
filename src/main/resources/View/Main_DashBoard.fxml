@@ -10,13 +10,13 @@
    <children>
       <ButtonBar layoutX="49.0" layoutY="14.0" prefHeight="40.0" prefWidth="700.0">
         <buttons>
-            <Button mnemonicParsing="false" text="DashBoard" />
+            <Button fx:id="btnDashboard" mnemonicParsing="false" onAction="#btnOnActionDashboard" text="DashBoard" />
             <Button fx:id="btnAddBook" mnemonicParsing="false" onAction="#btnOnActionAddBook" text="Add Book" />
-            <Button mnemonicParsing="false" text="Add Member" />
-            <Button mnemonicParsing="false" text="View" />
-          <Button mnemonicParsing="false" text="Issue Book" />
-            <Button mnemonicParsing="false" text="Return Book " />
-            <Button mnemonicParsing="false" text="History" />
+            <Button fx:id="btnAddMember" mnemonicParsing="false" onAction="#btnOnActionAddMember" text="Add Member" />
+            <Button fx:id="btnView" mnemonicParsing="false" onAction="#btnOnActionView" text="View" />
+          <Button fx:id="btnIssueBook" mnemonicParsing="false" onAction="#btnOnActionIssueBook" text="Issue Book" />
+            <Button fx:id="btnReturnBook" mnemonicParsing="false" onAction="#btnOnActionReturnBook" text="Return Book " />
+            <Button fx:id="btnHistory" mnemonicParsing="false" onAction="#btnOnActionHistory" text="History" />
         </buttons>
       </ButtonBar>
       <Button fx:id="btnLogOut" layoutX="689.0" layoutY="567.0" mnemonicParsing="false" onAction="#btnOnActionLogOut" text="Log Out" />

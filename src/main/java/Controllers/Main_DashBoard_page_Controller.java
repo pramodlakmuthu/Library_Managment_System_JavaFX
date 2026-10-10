@@ -14,10 +14,29 @@ import java.io.IOException;
 
 public class Main_DashBoard_page_Controller {
 
+
     @FXML
     private Button btnAddBook;
+
+    @FXML
+    private Button btnAddMember;
+
+    @FXML
+    private Button btnHistory;
+
+    @FXML
+    private Button btnIssueBook;
+
     @FXML
     private Button btnLogOut;
+
+    @FXML
+    private Button btnReturnBook;
+
+    @FXML
+    private Button btnView;
+    @FXML
+    private Button btnDashboard;
 
     @FXML
     void btnOnActionAddBook(ActionEvent event) {
@@ -63,5 +82,7 @@ public class Main_DashBoard_page_Controller {
 
 
     }
+
+
 
 }

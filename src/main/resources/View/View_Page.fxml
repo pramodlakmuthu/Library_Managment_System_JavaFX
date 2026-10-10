@@ -8,7 +8,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.AddBook.Add_Book_Page_Controller"
+            fx:controller="Controllers.ViewPage.View_page_Controller"
             prefHeight="400.0" prefWidth="600.0">
 
 </AnchorPane>
