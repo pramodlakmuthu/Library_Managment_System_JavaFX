@@ -37,6 +37,7 @@ public class LoginPageController {
                 stage.centerOnScreen();
                 stage.show();
             } catch (IOException e) {
+                e.printStackTrace();
                 throw new RuntimeException(e);
             }
 
