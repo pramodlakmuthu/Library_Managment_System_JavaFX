@@ -7,8 +7,8 @@ public class HistoryRecord {
     private String bookTitle;
     private LocalDate issueDate;
     private LocalDate dueDate;
-    private LocalDate returnDate; // Can be null if still borrowed
-    private String status;        // Borrowed, Returned, or Overdue
+    private LocalDate returnDate;
+    private String status;
 
     public HistoryRecord(String memberId, String bookTitle, LocalDate issueDate, LocalDate dueDate, LocalDate returnDate, String status) {
         this.memberId = memberId;

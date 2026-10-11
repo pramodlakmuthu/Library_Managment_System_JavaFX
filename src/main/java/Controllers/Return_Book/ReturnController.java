@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReturnController {
-    // For demonstration, you can link this to your IssueController data list
+
     private static List<String> returnedBooksList = new ArrayList<>();
 
     public long calculateOverdueDays(LocalDate dueDate, LocalDate returnDate) {
         if (returnDate.isAfter(dueDate)) {
             return ChronoUnit.DAYS.between(dueDate, returnDate);
         }
-        return 0; // Not overdue
+        return 0;
     }
 
     public boolean returnBook(String issueId) {

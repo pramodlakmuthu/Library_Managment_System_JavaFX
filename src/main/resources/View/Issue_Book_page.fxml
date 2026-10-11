@@ -10,14 +10,14 @@
 
 <AnchorPane prefHeight="588.0" prefWidth="746.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Issue_Book.IssueController">
     <children>
-        <!-- Page Header -->
+
         <Label layoutX="60.0" layoutY="25.0" text="Issue Book Module">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
 
-        <!-- Form Fields & Labels -->
+
         <Label layoutX="60.0" layoutY="85.0" style="-fx-font-weight: bold;" text="Issue ID :" />
         <TextField fx:id="txtIssueId" layoutX="200.0" layoutY="80.0" prefHeight="32.0" prefWidth="300.0" promptText="e.g. ISS-001" />
 
@@ -33,7 +33,7 @@
         <Label layoutX="60.0" layoutY="325.0" style="-fx-font-weight: bold;" text="Due Date :" />
         <DatePicker fx:id="dateDue" layoutX="200.0" layoutY="320.0" prefHeight="32.0" prefWidth="300.0" />
 
-        <!-- Action Buttons -->
+
         <Button fx:id="btnIssueBook" layoutX="200.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnOnActionIssueBook" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Issue Book">
             <font>
                 <Font name="System Bold" size="12.0" />

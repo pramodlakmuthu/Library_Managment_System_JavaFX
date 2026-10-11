@@ -62,7 +62,6 @@ public class Main_DashBoard_page_Controller implements Initializable {
         }
     }
 
-    // Updated loadUI method with CSS stylesheet injection and subfolder fallback protection
     private void loadUI(String fxmlFileName) {
         try {
             URL fileUrl = getClass().getResource("/View/" + fxmlFileName);
@@ -79,7 +78,6 @@ public class Main_DashBoard_page_Controller implements Initializable {
             FXMLLoader loader = new FXMLLoader(fileUrl);
             Parent root = loader.load();
 
-            // Apply global CSS stylesheet to the loaded sub-page root if available
             URL cssUrl = getClass().getResource("/CSS/style.css");
             if (cssUrl != null) {
                 root.getStylesheets().add(cssUrl.toExternalForm());

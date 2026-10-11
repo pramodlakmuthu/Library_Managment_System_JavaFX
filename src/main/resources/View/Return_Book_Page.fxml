@@ -9,26 +9,26 @@
 
 <AnchorPane prefHeight="588.0" prefWidth="746.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Return_Book.Return_Book_Page_Controller">
     <children>
-        <!-- Page Title -->
+
         <Label layoutX="60.0" layoutY="25.0" text="Return Book Management">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
         </Label>
 
-        <!-- Search Section -->
+
         <Label layoutX="60.0" layoutY="85.0" style="-fx-font-weight: bold;" text="Issue ID / Reference :" />
         <TextField fx:id="txtSearchIssueId" layoutX="210.0" layoutY="80.0" prefHeight="32.0" prefWidth="250.0" promptText="Enter Issue ID (e.g. ISS-001)" />
         <Button fx:id="btnSearch" layoutX="470.0" layoutY="80.0" mnemonicParsing="false" onAction="#btnOnActionSearch" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Search" />
 
-        <!-- Member & Book Information Display -->
+
         <Label layoutX="60.0" layoutY="145.0" style="-fx-font-weight: bold;" text="Member Info :" />
         <TextField fx:id="txtMemberInfo" editable="false" layoutX="210.0" layoutY="140.0" prefHeight="32.0" prefWidth="360.0" promptText="Member details will appear here..." />
 
         <Label layoutX="60.0" layoutY="205.0" style="-fx-font-weight: bold;" text="Book Info :" />
         <TextField fx:id="txtBookInfo" editable="false" layoutX="210.0" layoutY="200.0" prefHeight="32.0" prefWidth="360.0" promptText="Book details will appear here..." />
 
-        <!-- Dates Section -->
+
         <Label layoutX="60.0" layoutY="265.0" style="-fx-font-weight: bold;" text="Borrow Date :" />
         <DatePicker fx:id="dateBorrow" disable="true" layoutX="210.0" layoutY="260.0" prefHeight="32.0" prefWidth="250.0" />
 
@@ -38,14 +38,14 @@
         <Label layoutX="60.0" layoutY="385.0" style="-fx-font-weight: bold;" text="Return Date :" />
         <DatePicker fx:id="dateReturn" layoutX="210.0" layoutY="380.0" onAction="#dateReturnOnAction" prefHeight="32.0" prefWidth="250.0" />
 
-        <!-- Overdue Status Warning Label -->
+
         <Label fx:id="lblOverdueStatus" layoutX="210.0" layoutY="425.0" prefHeight="25.0" prefWidth="360.0">
             <font>
                 <Font name="System Bold" size="13.0" />
             </font>
         </Label>
 
-        <!-- Action Buttons -->
+
         <Button fx:id="btnReturnBook" layoutX="210.0" layoutY="470.0" mnemonicParsing="false" onAction="#btnOnActionReturnBook" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Return Book">
             <font>
                 <Font name="System Bold" size="12.0" />

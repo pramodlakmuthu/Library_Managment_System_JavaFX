@@ -5,7 +5,7 @@ import Controllers.AddMember.MemberController;
 import Model.Book;
 import Model.IssueBook;
 import Model.Members;
-import javafx.collections.FXCollections;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -32,20 +32,20 @@ public class Issue_Book_Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Set default issue date to today
+
         dateIssue.setValue(LocalDate.now());
-        dateDue.setValue(LocalDate.now().plusDays(14)); // Default 2-week borrowing period
+        dateDue.setValue(LocalDate.now().plusDays(14));
 
         loadComboBoxData();
     }
 
     private void loadComboBoxData() {
-        // Load member IDs or names into ComboBox
+
         for (Members m : memberController.getAllMembers()) {
             cmbMembers.getItems().add(m.getMemberId() + " - " + m.getName());
         }
 
-        // Load book ISBNs or titles into ComboBox
+
         for (Book b : bookController.getAllBooks()) {
             cmbBooks.getItems().add(b.getIsbn() + " - " + b.getTitle());
         }
@@ -64,7 +64,7 @@ public class Issue_Book_Controller implements Initializable {
             return;
         }
 
-        // Extract raw IDs (taking the part before the hyphen)
+        
         String memberId = selectedMember.split(" - ")[0];
         String isbn = selectedBook.split(" - ")[0];
 

@@ -37,7 +37,7 @@ public class History_Page_Controller implements Initializable {
     }
 
     private void loadHistoryData() {
-        // Sample data for demonstration - you can load records dynamically from your transaction controllers
+
         ObservableList<HistoryRecord> historyList = FXCollections.observableArrayList(
                 new HistoryRecord("M001", "Java Programming", LocalDate.now().minusDays(10), LocalDate.now().plusDays(4), null, "Borrowed"),
                 new HistoryRecord("M002", "Data Structures", LocalDate.now().minusDays(20), LocalDate.now().minusDays(6), LocalDate.now().minusDays(5), "Returned"),

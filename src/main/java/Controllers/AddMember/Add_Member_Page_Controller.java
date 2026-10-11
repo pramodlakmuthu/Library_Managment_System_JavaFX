@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 
 public class Add_Member_Page_Controller {
 
-    @FXML private TextField txtMemberID; // Must match fx:id="txtMemberID"
+    @FXML private TextField txtMemberID;
     @FXML private TextField txtFullName;
     @FXML private TextField txtEmail;
     @FXML private TextField txtContactNb;

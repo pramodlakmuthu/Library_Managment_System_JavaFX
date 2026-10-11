@@ -1,7 +1,6 @@
 package Controllers.Return_Book;
 
-import Controllers.Issue_Book.IssueController;
-import Model.IssueBook;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -26,10 +25,10 @@ public class Return_Book_Page_Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // Set default return date to today
+
         dateReturn.setValue(LocalDate.now());
 
-        // Make info fields read-only since they auto-populate from the search
+
         if (txtMemberInfo != null) txtMemberInfo.setEditable(false);
         if (txtBookInfo != null) txtBookInfo.setEditable(false);
     }
@@ -43,13 +42,12 @@ public class Return_Book_Page_Controller implements Initializable {
             return;
         }
 
-        // TODO: Replace with your actual lookup logic from IssueController/Database
-        // For sample demonstration, simulating a found record:
+
         if (searchId.equals("ISS-001")) {
             txtMemberInfo.setText("M001 - John Doe");
             txtBookInfo.setText("B001 - Java Programming");
             dateBorrow.setValue(LocalDate.now().minusDays(10));
-            dateDue.setValue(LocalDate.now().minusDays(3)); // Due 3 days ago (Overdue)
+            dateDue.setValue(LocalDate.now().minusDays(3));
 
             checkOverdue();
         } else {
