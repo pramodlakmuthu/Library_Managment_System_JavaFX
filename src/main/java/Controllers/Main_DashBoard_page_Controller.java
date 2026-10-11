@@ -62,14 +62,12 @@ public class Main_DashBoard_page_Controller implements Initializable {
         }
     }
 
-    // Updated loadUI method with subfolder fallback protection
+    // Updated loadUI method with CSS stylesheet injection and subfolder fallback protection
     private void loadUI(String fxmlFileName) {
         try {
-            // Try loading from root /View/ first, then check common subfolders if null
             URL fileUrl = getClass().getResource("/View/" + fxmlFileName);
 
             if (fileUrl == null) {
-                // Fallback check if it's placed inside a subfolder matching the name
                 String folderName = fxmlFileName.replace(".fxml", "");
                 fileUrl = getClass().getResource("/View/" + folderName + "/" + fxmlFileName);
             }
@@ -78,7 +76,15 @@ public class Main_DashBoard_page_Controller implements Initializable {
                 throw new IOException("FXML file not found: " + fxmlFileName);
             }
 
-            Parent root = FXMLLoader.load(fileUrl);
+            FXMLLoader loader = new FXMLLoader(fileUrl);
+            Parent root = loader.load();
+
+            // Apply global CSS stylesheet to the loaded sub-page root if available
+            URL cssUrl = getClass().getResource("/CSS/style.css");
+            if (cssUrl != null) {
+                root.getStylesheets().add(cssUrl.toExternalForm());
+            }
+
             contentPane.getChildren().clear();
             contentPane.getChildren().add(root);
         } catch (IOException e) {
@@ -105,29 +111,27 @@ public class Main_DashBoard_page_Controller implements Initializable {
 
     @FXML
     void btnOnActionAddMember(ActionEvent event) {
-        // If your file is inside a subfolder like resources/View/AddMember/Add_Member.fxml,
-        // you can also explicitly pass it like: loadUI("AddMember/Add_Member.fxml");
         loadUI("Add_Member_Page.fxml");
     }
 
     @FXML
     void btnOnActionView(ActionEvent event) {
-        // loadUI("View_Books.fxml");
+        loadUI("View_Page.fxml");
     }
 
     @FXML
     void btnOnActionIssueBook(ActionEvent event) {
-        // loadUI("Issue_Book.fxml");
+        loadUI("Issue_Book_page.fxml");
     }
 
     @FXML
     void btnOnActionReturnBook(ActionEvent event) {
-        // loadUI("Return_Book.fxml");
+        loadUI("Return_Book_Page.fxml");
     }
 
     @FXML
     void btnOnActionHistory(ActionEvent event) {
-        // loadUI("History.fxml");
+        loadUI("History_Page.fxml");
     }
 
     @FXML
@@ -141,6 +145,13 @@ public class Main_DashBoard_page_Controller implements Initializable {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             try {
                 Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/View/LoginPage.fxml")));
+
+                // Add global CSS to the login scene upon logout
+                URL cssUrl = getClass().getResource("/CSS/style.css");
+                if (cssUrl != null) {
+                    scene.getStylesheets().add(cssUrl.toExternalForm());
+                }
+
                 stage.setScene(scene);
                 stage.setTitle("Library Management System - Login");
                 stage.setMinWidth(600);

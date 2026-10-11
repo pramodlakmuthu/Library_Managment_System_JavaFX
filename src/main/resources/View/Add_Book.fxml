@@ -4,23 +4,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="450.0" prefWidth="750.0" stylesheets="/css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddBook.Add_Book_Page_Controller">
+    <children>
+        <!-- Page Header -->
+        <Label layoutX="60.0" layoutY="25.0" text="Add New Book to Library">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
 
-<AnchorPane prefHeight="549.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AddBook.Add_Book_Page_Controller">
-   <children>
-      <Label layoutX="82.0" layoutY="101.0" prefHeight="18.0" prefWidth="71.0" text="ISBN" />
-      <Label layoutX="82.0" layoutY="161.0" prefHeight="18.0" prefWidth="71.0" text="Book Title " />
-      <Label layoutX="85.0" layoutY="218.0" prefHeight="18.0" prefWidth="71.0" text="Author" />
-      <Label layoutX="85.0" layoutY="275.0" prefHeight="18.0" prefWidth="71.0" text="Category" />
-      <Label layoutX="82.0" layoutY="357.0" prefHeight="18.0" prefWidth="110.0" text="Published Year " />
-      <Label layoutX="102.0" layoutY="435.0" prefHeight="18.0" prefWidth="71.0" text="Quantity" />
-      <TextField fx:id="txtISBN" layoutX="218.0" layoutY="98.0" />
-      <TextField fx:id="txtBookTitle" layoutX="218.0" layoutY="148.0" />
-      <TextField fx:id="txtAuthor" layoutX="218.0" layoutY="205.0" />
-      <TextField fx:id="txtCategory" layoutX="218.0" layoutY="271.0" />
-      <TextField fx:id="txtPublishedYear" layoutX="218.0" layoutY="344.0" />
-      <TextField fx:id="txtQuantity" layoutX="203.0" layoutY="431.0" />
-      <Button fx:id="btnAdd" layoutX="177.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnOnActionAddBook" text="Add" />
-      <Button fx:id="btnReset" layoutX="327.0" layoutY="496.0" mnemonicParsing="false" onAction="#btnOnActionReset" text="Reset" />
-   </children>
+        <!-- Form Labels & Text Fields -->
+        <Label layoutX="60.0" layoutY="80.0" style="-fx-font-weight: bold;" text="ISBN :" />
+        <TextField fx:id="txtISBN" layoutX="180.0" layoutY="75.0" prefHeight="30.0" prefWidth="280.0" promptText="Enter book ISBN..." />
+
+        <Label layoutX="60.0" layoutY="130.0" style="-fx-font-weight: bold;" text="Book Title :" />
+        <TextField fx:id="txtBookTitle" layoutX="180.0" layoutY="125.0" prefHeight="30.0" prefWidth="280.0" promptText="Enter book title..." />
+
+        <Label layoutX="60.0" layoutY="180.0" style="-fx-font-weight: bold;" text="Author :" />
+        <TextField fx:id="txtAuthor" layoutX="180.0" layoutY="175.0" prefHeight="30.0" prefWidth="280.0" promptText="Enter author name..." />
+
+        <Label layoutX="60.0" layoutY="230.0" style="-fx-font-weight: bold;" text="Category :" />
+        <TextField fx:id="txtCategory" layoutX="180.0" layoutY="225.0" prefHeight="30.0" prefWidth="280.0" promptText="Enter book category..." />
+
+        <Label layoutX="60.0" layoutY="280.0" style="-fx-font-weight: bold;" text="Published Year :" />
+        <TextField fx:id="txtPublishedYear" layoutX="180.0" layoutY="275.0" prefHeight="30.0" prefWidth="280.0" promptText="e.g. 2023..." />
+
+        <Label layoutX="60.0" layoutY="330.0" style="-fx-font-weight: bold;" text="Quantity :" />
+        <TextField fx:id="txtQuantity" layoutX="180.0" layoutY="325.0" prefHeight="30.0" prefWidth="280.0" promptText="Enter total copies..." />
+
+        <!-- Action Buttons -->
+        <Button fx:id="btnAdd" layoutX="180.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnOnActionAddBook" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Add Book" />
+        <Button fx:id="btnReset" layoutX="330.0" layoutY="385.0" mnemonicParsing="false" onAction="#btnOnActionReset" prefHeight="32.0" prefWidth="130.0" text="Reset" />
+    </children>
 </AnchorPane>
